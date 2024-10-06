@@ -42,5 +42,7 @@ python dep_scan_threshold_analyzer.py --reports-src <reports_folder_value> --pro
 
 ```shell
 python dep_scan_threshold_analyzer.py --reports-src reports --languages java --threshold 5 
+```
 
-This will check if the number of vulnerabilities in the dep-scan java report in the reports folder that exceeds the threshold of 5.
+This will check if the number of vulnerabilities in the dep-scan java report in the reports folder that exceeds the
+threshold of 5.
