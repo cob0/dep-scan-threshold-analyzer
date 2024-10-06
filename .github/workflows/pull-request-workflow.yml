@@ -1,0 +1,17 @@
+name: Pull request base workflow
+run-name: ${{ github.actor }} is running pull request base workflow
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+jobs:
+  to-be-define:
+    runs-on: ubuntu-latest
+    environment: Default
+    steps:
+      - name: to be define
+        run: echo "to be define"
