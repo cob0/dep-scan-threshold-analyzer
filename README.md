@@ -35,7 +35,7 @@ No additional dependencies are required. Just ensure you have Python 3.12 instal
 To run **dep-scan-threshold-analyzer** locally, use the following command:
 
 ```shell
-python dep_scan_threshold_analyzer.py --reports-src <reports_folder_value> --project-type <language_value> --threshold <threshold_value>
+python dep_scan_threshold_analyzer.py --reports-src <reports_folder_value> --languages <language_value> --threshold <threshold_value>
 ```
 
 ### Usage example
