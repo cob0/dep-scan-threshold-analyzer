@@ -35,13 +35,13 @@ No additional dependencies are required. Just ensure you have Python 3.12 instal
 To run **dep-scan-threshold-analyzer** locally, use the following command:
 
 ```shell
-python dep_scan_threshold_analyzer.py --reports-src <reports_folder_value> --languages <language_value> --threshold <threshold_value>
+python dep_scan_threshold_analyzer.py --file <reports_folder_value> --threshold <threshold_value>
 ```
 
 ### Usage example
 
 ```shell
-python dep_scan_threshold_analyzer.py --reports-src reports --languages java --threshold 5 
+python dep_scan_threshold_analyzer.py --file reports/sbom.vdr.json --threshold 5 
 ```
 
 This will check if the number of vulnerabilities in the dep-scan java report in the reports folder that exceeds the
