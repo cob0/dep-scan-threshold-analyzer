@@ -6,11 +6,11 @@ ARGS_DESCRIPTION = ("A binary tool that verifies if vulnerability reports genera
                     "exceed the allowed values.")
 
 
-class Arguments:
+class ArgumentsConfiguration:
     instance: Namespace | None = None
 
     def __init__(self) -> None:
-        if Arguments.instance is None:
+        if ArgumentsConfiguration.instance is None:
             self.instance = self._init_args()
 
     def _init_parser(self) -> ArgumentParser:
@@ -30,4 +30,4 @@ class Arguments:
         return parser.parse_args()
 
 
-args = Arguments().instance
+args = ArgumentsConfiguration().instance
