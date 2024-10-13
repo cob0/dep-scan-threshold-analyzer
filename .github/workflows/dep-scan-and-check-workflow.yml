@@ -22,7 +22,6 @@ jobs:
         with:
           src: .
           project_type: docker
-          additional_arguments: --deep --explain --debug
         env:
           VDB_HOME: ${{ github.workspace }}/db
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

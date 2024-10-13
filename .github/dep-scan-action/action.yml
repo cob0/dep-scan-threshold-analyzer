@@ -16,10 +16,6 @@ inputs:
   project_type:
     description: "Override project type if auto-detection is incorrect (https://github.com/owasp-dep-scan/dep-scan?tab=readme-ov-file#supported-languages-and-package-format)"
     required: false
-  additional_arguments:
-    description: "Add additional arguments"
-    required: false
-    default: "--debug"
   thank_you:
     description: "Indicate you have sponsored OWASP dep-scan"
     required: false
@@ -37,7 +33,6 @@ runs:
     - ${{ inputs.profile }}
     - "--type"
     - ${{ inputs.project_type }}
-    - ${{ inputs.additional_arguments }}
 branding:
   icon: "check"
   color: "blue"
