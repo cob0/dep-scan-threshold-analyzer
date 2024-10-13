@@ -18,11 +18,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Run dependency scanner
-        uses: ./.github/actions
+        uses: ./.github/dep-scan-action
         with:
           src: .
         env:
           VDB_HOME: ${{ github.workspace }}/db
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Check dependency reports
-        run: ls -lha reports
+        uses: ./.github/dep-scan-threshold-analyzer-action
+        with:
+          threshold: '7.0'
