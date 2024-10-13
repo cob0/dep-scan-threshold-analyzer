@@ -26,7 +26,7 @@ class ThresholdAnalyzer:
                         if cvss_score >= self.threshold:
                             self.logger.error(
                                 f"One or more dependencies were identified with vulnerabilities that have a CVSS score greater than or equal to '{self.threshold}'")
-                            return False
+                            return True
         except FileNotFoundError:
             self.logger.warning("There are no report files in the reports folder")
 
