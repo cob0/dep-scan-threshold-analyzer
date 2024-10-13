@@ -18,7 +18,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Run dependency scanner
-        uses: ./actions/dep-scan-action.yml
+        uses: ./actions
         with:
           src: .
         env:
