@@ -19,15 +19,15 @@ inputs:
   deep:
     description: "Perform deep scan by passing this --deep argument to cdxgen. Useful while scanning docker images and OS packages."
     required: false
-    default: false
+    default: "--deep"
   explain:
     description: "Makes depscan to explain the various analysis. Useful for creating detailed reports."
     required: false
-    default: false
+    default: "--explain"
   debug:
     description: "Run depscan in debug mode."
     required: false
-    default: false
+    default: "--debug"
   thank_you:
     description: "Indicate you have sponsored OWASP dep-scan"
     required: false
@@ -45,11 +45,8 @@ runs:
     - ${{ inputs.profile }}
     - "--type"
     - ${{ inputs.project_type }}
-    - "--deep"
     - ${{ inputs.deep }}
-    - "--explain"
     - ${{ inputs.explain }}
-    - "--debug"
     - ${{ inputs.debug }}
 branding:
   icon: "check"
