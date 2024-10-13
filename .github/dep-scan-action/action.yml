@@ -25,9 +25,12 @@ runs:
   using: "docker"
   image: "docker://ghcr.io/owasp-dep-scan/dep-scan:release-5.x"
   args:
-    - "-i ${{ inputs.src }}"
-    - "-t ${{ inputs.project_type }}"
-    - "--profile ${{ inputs.profile }}"
+    - "--profile"
+    - ${{ inputs.profile }}
+    - "-i"
+    - ${{ inputs.src }}
+    - "-t"
+    - ${{ inputs.project_type }}
 branding:
   icon: "check"
   color: "blue"
