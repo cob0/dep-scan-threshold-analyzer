@@ -8,7 +8,11 @@ LABEL mantainer="cob0"\
       org.opencontainers.image.version="1.0.0"\
       org.opencontainers.image.licenses=GPLv3
 
-COPY . /opt/dep-scan-threshold-analyzer
+COPY argparser /opt/dep-scan-threshold-analyzer/argparser
+COPY depscan /opt/dep-scan-threshold-analyzer/depscan
+COPY log /opt/dep-scan-threshold-analyzer/log
+COPY dep_scan_threshold_analyzer.py /opt/dep-scan-threshold-analyzer
+
 WORKDIR /opt/dep-scan-threshold-analyzer
 
-ENTRYPOINT [ "python" ]
+ENTRYPOINT [ "python", "-u" ]
