@@ -24,15 +24,7 @@ inputs:
 runs:
   using: "docker"
   image: "docker://ghcr.io/owasp-dep-scan/dep-scan:release-5.x"
-  args:
-    - "--src"
-    - ${{ inputs.src }}
-    - "--report_file"
-    - ${{ inputs.report_file }}
-    - "--profile"
-    - ${{ inputs.profile }}
-    - "--type"
-    - ${{ inputs.project_type }} --debug --deep --explain
+  args: "--src ${{ inputs.src }} --report_file ${{ inputs.report_file }} --profile ${{ inputs.profile }} --type ${{ inputs.project_type }} --deep --explain --debug"
 branding:
   icon: "check"
   color: "blue"
