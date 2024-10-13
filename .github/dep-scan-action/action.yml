@@ -21,6 +21,7 @@ runs:
   using: "docker"
   image: "docker://ghcr.io/owasp-dep-scan/dep-scan:release-5.x"
   args:
+    - "--debug"
     - "--profile"
     - ${{ inputs.profile }}
     - "-i"
