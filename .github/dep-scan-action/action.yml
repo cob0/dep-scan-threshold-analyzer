@@ -16,6 +16,18 @@ inputs:
   project_type:
     description: "Override project type if auto-detection is incorrect (https://github.com/owasp-dep-scan/dep-scan?tab=readme-ov-file#supported-languages-and-package-format)"
     required: false
+  deep:
+    description: "Perform deep scan by passing this --deep argument to cdxgen. Useful while scanning docker images and OS packages."
+    required: false
+    default: false
+  explain:
+    description: "Makes depscan to explain the various analysis. Useful for creating detailed reports."
+    required: false
+    default: false
+  debug:
+    description: "Run depscan in debug mode."
+    required: false
+    default: false
   thank_you:
     description: "Indicate you have sponsored OWASP dep-scan"
     required: false
@@ -33,6 +45,12 @@ runs:
     - ${{ inputs.profile }}
     - "--type"
     - ${{ inputs.project_type }}
+    - "--deep"
+    - ${{ inputs.deep }}
+    - "--explain"
+    - ${{ inputs.explain }}
+    - "--debug"
+    - ${{ inputs.debug }}
 branding:
   icon: "check"
   color: "blue"
