@@ -1,0 +1,7 @@
+services:
+  dep-scan-threshold-analyzer:
+    build: .
+    entrypoint: python
+    command: dep_scan_threshold_analyzer.py -f reports/sbom-java.vdr.json -t 5
+    network_mode: none
+    restart: "no"
