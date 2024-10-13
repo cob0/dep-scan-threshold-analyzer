@@ -21,6 +21,7 @@ jobs:
         uses: ./.github/dep-scan-action
         with:
           src: .
+          project_type: python
         env:
           VDB_HOME: ${{ github.workspace }}/db
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

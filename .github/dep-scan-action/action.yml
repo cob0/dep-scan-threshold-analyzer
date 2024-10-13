@@ -13,6 +13,9 @@ inputs:
     description: "Name of the profile to use (appsec, research, operational, threat-modeling, license-compliance, generic)"
     required: false
     default: "generic"
+  project_type:
+    description: "Override project type if auto-detection is incorrect (https://github.com/owasp-dep-scan/dep-scan?tab=readme-ov-file#supported-languages-and-package-format)"
+    required: false
   thank_you:
     description: "Indicate you have sponsored OWASP dep-scan"
     required: false
@@ -28,6 +31,8 @@ runs:
     - ${{ inputs.report_file }}
     - "--profile"
     - ${{ inputs.profile }}
+    - "--type"
+    - ${{ inputs.project_type }}
 branding:
   icon: "check"
   color: "blue"
