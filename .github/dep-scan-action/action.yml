@@ -37,9 +37,7 @@ runs:
     - ${{ inputs.profile }}
     - "--type"
     - ${{ inputs.project_type }}
-    - ${{ inputs.deep }}
-    - ${{ inputs.explain }}
-    - ${{ inputs.debug }}
+    - ${{ inputs.additional_arguments }}
 branding:
   icon: "check"
   color: "blue"
