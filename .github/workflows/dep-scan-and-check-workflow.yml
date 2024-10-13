@@ -24,10 +24,10 @@ jobs:
       - name: Run dependency scanner
         uses: ./.github/dep-scan-action
         with:
-          src: ${{ github.workspace }}/dep-scan-threshold-analyzer.tar
+          src: /github/workspace/dep-scan-threshold-analyzer.tar
           project_type: docker
         env:
-          VDB_HOME: ${{ github.workspace }}/db
+          VDB_HOME: /github/workspace/db
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Debug reports folder
         run: ls -lha
