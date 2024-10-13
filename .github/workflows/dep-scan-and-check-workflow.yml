@@ -25,7 +25,7 @@ jobs:
           VDB_HOME: ${{ github.workspace }}/db
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Debug reports folder
-        run: ls -lha reports/
+        run: ls -lha
       - name: Check dependency reports
         uses: ./.github/dep-scan-threshold-analyzer-action
         with:
