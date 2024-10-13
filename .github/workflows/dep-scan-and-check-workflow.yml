@@ -26,9 +26,9 @@ jobs:
           VDB_HOME: ${{ github.workspace }}/db
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Debug reports folder
-        run: ls -lha reports/ && cat reports/sbom-python.json
+        run: ls -lha reports/
       - name: Check dependency reports
         uses: ./.github/dep-scan-threshold-analyzer-action
         with:
-          report_file: '/github/workspace/reports/sbom-python.vdr.json'
+          report_file: '/github/workspace/reports/sbom-docker.vdr.json'
           threshold: '7.0'
