@@ -25,4 +25,4 @@ jobs:
           VDB_HOME: ${{ github.workspace }}/db
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Check dependency reports
-        run: ls -lha
+        run: ls -lha reports
