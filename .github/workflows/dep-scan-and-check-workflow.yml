@@ -1,0 +1,28 @@
+name: Run dependency scanner
+run-name: ${{ github.actor }} is running dependency scanner
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+jobs:
+  run-dependency-scanner:
+    runs-on: ubuntu-latest
+    environment: Default environment
+    permissions:
+      packages: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run dependency scanner
+        uses: ./actions/dep-scan-action.yml
+        with:
+          src: .
+        env:
+          VDB_HOME: ${{ github.workspace }}/db
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check dependency reports
+        run: ls -lha
