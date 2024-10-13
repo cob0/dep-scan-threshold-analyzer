@@ -5,10 +5,6 @@ inputs:
     description: "Source directory to scan. Defaults to workspace"
     required: false
     default: "/github/workspace"
-  report_file:
-    description: "Output file for the generated report. Defaults to reports/depscan.json"
-    required: false
-    default: "/github/workspace/reports/depscan.json"
   profile:
     description: "Name of the profile to use (appsec, research, operational, threat-modeling, license-compliance, generic)"
     required: false

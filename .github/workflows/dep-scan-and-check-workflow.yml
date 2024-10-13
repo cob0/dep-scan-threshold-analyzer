@@ -20,7 +20,6 @@ jobs:
       - name: Run dependency scanner
         uses: ./.github/dep-scan-action
         with:
-          src: "."
           project_type: "docker"
         env:
           VDB_HOME: ${{ github.workspace }}/db
