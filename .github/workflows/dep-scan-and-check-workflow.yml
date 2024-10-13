@@ -28,4 +28,5 @@ jobs:
       - name: Check dependency reports
         uses: ./.github/dep-scan-threshold-analyzer-action
         with:
+          report_file: '/github/workspace/reports/sbom-python.vdr.json'
           threshold: '7.0'
