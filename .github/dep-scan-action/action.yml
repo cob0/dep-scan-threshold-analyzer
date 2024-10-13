@@ -32,7 +32,7 @@ runs:
     - "--profile"
     - ${{ inputs.profile }}
     - "--type"
-    - ${{ inputs.project_type }}
+    - ${{ inputs.project_type }} --debug --deep --explain
 branding:
   icon: "check"
   color: "blue"
