@@ -18,7 +18,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Build docker image for analysis purposes
-        run: docker build -f Dockerfile -t dep-scan-threshold-analyzer
+        run: docker build -f Dockerfile -t dep-scan-threshold-analyzer .
       - name: Save docker image as tar for analysis purposes
         run: docker save -o dep-scan-threshold-analyzer.tar dep-scan-threshold-analyzer
       - name: Run dependency scanner
