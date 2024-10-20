@@ -22,7 +22,7 @@ jobs:
       - name: Save docker image as tar for analysis purposes
         run: docker save -o dep-scan-threshold-analyzer.tar dep-scan-threshold-analyzer
       - name: Run dependency scanner
-        uses: ./.github/dep-scan-action
+        uses: cob0/dep-scan-action@master
         with:
           src: /github/workspace/dep-scan-threshold-analyzer.tar
           project_type: docker

@@ -20,5 +20,5 @@ runs:
     - "-t"
     - ${{ inputs.threshold }}
 branding:
-  icon: "check"
-  color: "blue"
+  icon: "shield"
+  color: "green"
