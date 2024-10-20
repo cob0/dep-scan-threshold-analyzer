@@ -1,0 +1,36 @@
+name: Run dependency scanner
+run-name: ${{ github.actor }} is running dependency scanner
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+jobs:
+  run-dependency-scanner:
+    runs-on: ubuntu-latest
+    environment: Default environment
+    permissions:
+      packages: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Build docker image for analysis purposes
+        run: docker build -f Dockerfile -t dep-scan-threshold-analyzer .
+      - name: Save docker image as tar for analysis purposes
+        run: docker save -o dep-scan-threshold-analyzer.tar dep-scan-threshold-analyzer
+      - name: Run dependency scanner
+        uses: cob0/dep-scan-action@master
+        with:
+          src: /github/workspace/dep-scan-threshold-analyzer.tar
+          project_type: docker
+        env:
+          VDB_HOME: /github/workspace/db
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check dependency reports
+        uses: ./.github/dep-scan-threshold-analyzer-action
+        with:
+          report_file: '/github/workspace/reports/sbom-docker.vdr.json'
+          threshold: '7.0'
