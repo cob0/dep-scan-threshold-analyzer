@@ -30,7 +30,7 @@ jobs:
           VDB_HOME: /github/workspace/db
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Check dependency reports
-        uses: ./.github/dep-scan-threshold-analyzer-action
+        uses: cob0/dep-scan-threshold-analyzer-action@main
         with:
           report_file: '/github/workspace/reports/sbom-docker.vdr.json'
           threshold: '7.0'
